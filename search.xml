@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Html</title>
+      <title>Html-innerText与innerHTML的区别</title>
       <link href="/2022/10/20/Html/"/>
       <url>/2022/10/20/Html/</url>
       
@@ -58,7 +58,7 @@
       <link href="/2022/10/20/css-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
       <url>/2022/10/20/css-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
       
-        <content type="html"><![CDATA[<h1 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h1><ol><li><p>W3C盒子（标准盒子模型）由margin，border，padding，content，设置的width height是针对content的</p></li><li><p>IE盒子（怪异盒子模型）由margin，border，padding，content构成，但是设置的width height是包括border+padding+content</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h1><ol><li><p>W3C盒子（标准盒子模型）由margin，border，padding，content，设置的width height是针对content的</p></li><li><p>IE盒子（怪异盒子模型）由margin，border，padding，content构成，但是设置的width height是包括border+padding+content</p></li></ol><p><img src="/images/3.jpg"></p>]]></content>
       
       
       <categories>
