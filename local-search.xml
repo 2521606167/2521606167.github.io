@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>数据类型的检测方法有哪些？</title>
+    <link href="/2022/10/21/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
+    <url>/2022/10/21/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/</url>
+    
+    <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>typeof 1 //number</p></li><li class="lvl-2"><p>instanceof Number //false,返回布尔值</p></li><li class="lvl-2"><p>Object.prototype.toString.call(1) //[object Number]</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>js数据类型有哪些？两种类型的区别？</title>
+    <link href="/2022/10/21/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
+    <url>/2022/10/21/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
+    
+    <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>基本数据类型：字符串（String）、数字(Number)、布尔(Boolean)、空值（Null）、未声明（Undefined）、Symbol(注意：Symbol 是 ES6 引入了一种新的原始数据类型，表示独一无二的值。)</p></li><li class="lvl-2"><p>引用数据类型：对象(Object)、数组(Array)、函数(Function)。</p></li><li class="lvl-2"><p>区别：两者的存放地址不同</p></li></ul><p>基本数据类型存放在栈中，占用内存小，空间固定，且经常被使用。</p><p>引用数据类型存放在堆中，占用内存大，空间不固定；引用数据类型在栈中存放指针。指针指向堆中该实体的起始地址。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>扫毒2</title>
     <link href="/2022/10/21/%E8%A7%86%E9%A2%911/"/>
     <url>/2022/10/21/%E8%A7%86%E9%A2%911/</url>
@@ -33,7 +83,7 @@
     <link href="/2022/10/21/%E4%BC%98%E7%BE%8E%E8%AF%AD%E5%8F%A5%E6%91%98%E6%8A%843/"/>
     <url>/2022/10/21/%E4%BC%98%E7%BE%8E%E8%AF%AD%E5%8F%A5%E6%91%98%E6%8A%843/</url>
     
-    <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p><span style="line-height:40px">终是庄周梦了蝶，你是恩赐亦是劫！</span></p></li><li class="lvl-2"><p><span style="line-height:40px">冬雪将至，共饮此杯！</span></p></li><li class="lvl-2"><p><span style="line-height:40px">南风知我意，吹梦到西洲。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">或许短暂，或许难堪，或许本该这样。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">这个时间什么都有，就是没有如果。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">余生再无倾城色，一草一木皆相思。</span></p></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p><span style="line-height:40px">终是庄周梦了蝶，你是恩赐亦是劫！</span></p></li><li class="lvl-2"><p><span style="line-height:40px">冬雪将至，共饮此杯！</span></p></li><li class="lvl-2"><p><span style="line-height:40px">南风知我意，吹梦到西洲。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">或许短暂，或许难堪，或许本该这样。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">这个世界什么都有，就是没有如果。</span></p></li><li class="lvl-2"><p><span style="line-height:40px">余生再无倾城色，一草一木皆相思。</span></p></li></ul>]]></content>
     
     
     <categories>
