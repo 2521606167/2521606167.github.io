@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>vue2响应式原理</title>
+      <link href="/2022/10/22/vue2%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/"/>
+      <url>/2022/10/22/vue2%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1>一、数组</h1><h2 id="1-1-不能监听的情况">1.1 不能监听的情况</h2><ol><li class="lvl-3"><p>直接通过下表赋值 arr[i] = value</p></li><li class="lvl-3"><p>直接修改数组长度 arr.length = newLen</p></li></ol><h2 id="1-2-替代做法">1.2 替代做法</h2><ol><li class="lvl-4"><p>修改值</p></li></ol>   <figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs haxe">Vue.<span class="hljs-keyword">set</span>(arr, index, <span class="hljs-keyword">new</span><span class="hljs-type">value</span>)<br>vm.$<span class="hljs-keyword">set</span>(arr, index, <span class="hljs-keyword">new</span><span class="hljs-type">value</span>)<br>arr.splice(index, <span class="hljs-number">1</span>, <span class="hljs-keyword">new</span><span class="hljs-type">value</span>)<br></code></pre></td></tr></table></figure><ol start="2"><li class="lvl-4"><p>修改数组长度</p></li></ol>   <figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">arr.splice(<span class="hljs-keyword">new</span><span class="hljs-type">Len</span>) <br></code></pre></td></tr></table></figure><pre><code class="hljs">调用数组的pop、push、shift、unshift、splice、sort、reverse等方法时是可以监听到数组的变化的 </code></pre><h1>二. 对象</h1><h2 id="2-1-不能监听的情况">2.1 不能监听的情况</h2><p>属性的新增和删除</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs haxe">obj.<span class="hljs-keyword">new</span><span class="hljs-type">key</span>=<span class="hljs-keyword">new</span><span class="hljs-type">value</span><br>delete obj.key<br></code></pre></td></tr></table></figure><h2 id="2-2-替代做法">2.2 替代做法</h2><p>$$<br>// 新增<br>Vue.set(obj, newkey, newvalue)<br>vm.$set(obj, newkey, newvalue)<br>obj = Object.assign({}, obj, {newkey1: newvalue1, newkey2: newvalue2})<br>// 删除<br>Vue.delete(obj, key)<br>vm.$delete(obj, key)<br>$$</p><h1>三、分析 vue 2 无法监听数组和对象的这些变化的原因</h1><p>首先，vue2是通过Object.defineProperty(obj, key, value)这种方式监听数据的</p><h2 id="3-1-对于数组">3.1 对于数组</h2><p>Object.defineProperty()是可以对数组实现监听操作的，但是vue并没有实现这个功能，因为数组长度不定而且数据可能会很多，如果对每一个数据都实现监听，性能代价太大</p><p>但是注意：数组中的元素是引用类型时是会被监听的</p><h2 id="3-2-对象">3.2 对象</h2><p>Object.defineProperty()针对的是对象的某个属性，而且这个操作在vue的初始化阶段就完成了，所以新增的属性无法监听，通过set方法新增对象就相当于初始化阶段的数据响应式处理</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>原型和原型链</title>
+      <link href="/2022/10/22/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+      <url>/2022/10/22/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>原型可以解决什么问题？</br><span>对象共享属性和共享方法</span></p></li><li class="lvl-2"><p>谁有原型？</br>函数拥有：prototype<br>对象拥有：<em>proto</em></p></li><li class="lvl-2"><p>对象查找属性或者方法的顺序</br>先在对象本身查找–》构造函数中查找–》对象的原型–》构造函数的原型中–》当前原型的原型</p></li><li class="lvl-2"><p>原型链</br>是什么？  就是把原型串联起来原型链的最顶端是 null</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>null，undefined的区别？</title>
+      <link href="/2022/10/22/null%EF%BC%8Cundefined%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/"/>
+      <url>/2022/10/22/null%EF%BC%8Cundefined%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>作者在设计null时借鉴了java的语言</p></li><li class="lvl-2"><p>null会被隐式转换为0，不容易发现错误</p></li><li class="lvl-2"><p>先有null和undefined，出来undefined是为了填补之前的坑</p></li><li class="lvl-2"><p>具体区别：null是一个表示“无”的对象，转为数值时为0；undefined表示声明的变量未初始化，转为数值是为NaN。</p></li></ul><p><img src="/images/10.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据类型的检测方法有哪些？</title>
       <link href="/2022/10/21/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/"/>
       <url>/2022/10/21/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/</url>
