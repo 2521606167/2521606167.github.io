@@ -271,6 +271,11 @@
           
   <div class="mt-3">
     
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        txw
+      </span>
+    
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
@@ -286,7 +291,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          256 words
+          256 vortoj
         
       </span>
     
@@ -297,7 +302,7 @@
         
         
         
-          3 mins
+          3 minutoj
         
       </span>
     
@@ -307,7 +312,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> rigardoj
         </span>
         
       
@@ -348,7 +353,7 @@
               <p class="note note-info">
                 
                   
-                    Last updated on October 21, 2022 pm
+                    Aktualizita: a day ago
                   
                 
               </p>
@@ -415,25 +420,25 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>Aŭtoro</div>
           <div>txw</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
+          <div>Postigita</div>
           <div>October 21, 2022</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Updated on</div>
+          <div>Aktualizita</div>
           <div>October 21, 2022</div>
         </div>
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>Lizenta</div>
           <div>
             
               
@@ -462,7 +467,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
                       <a href="/2022/10/21/link-%E4%B8%8E-import-%E7%9A%84%E5%8C%BA%E5%88%AB/" title="link 与 @import 的区别">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">link 与 @import 的区别</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">Antaŭa afiŝo</span>
                       </a>
                     
                   </article>
@@ -471,7 +476,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
                     
                       <a href="/2022/10/21/vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="vue2的生命周期">
                         <span class="hidden-mobile">vue2的生命周期</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">Sekva afiŝo</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -483,6 +488,28 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
             
   <article id="comments" lazyload>
     
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"Yu6LWsocwFQy42O0RzKIne96-gzGzoHsz","appKey":"bquFswrmzIj9ODoKSGJ0yufg","path":"window.location.pathname","placeholder":"说点什么呢？","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"https://yu6lwsoc.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
 
   </article>
 
@@ -496,7 +523,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Enhavtabelo</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -551,7 +578,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Serĉi</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -559,7 +586,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">ŝlosivorto</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -587,14 +614,14 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
   
     
       <span id="busuanzi_container_site_pv" style="display: none">
-        Views: 
+        Vidoj: 
         <span id="busuanzi_value_site_pv"></span>
         
       </span>
     
     
       <span id="busuanzi_container_site_uv" style="display: none">
-        Visitors: 
+        Visitoj: 
         <span id="busuanzi_value_site_uv"></span>
         
       </span>
@@ -792,7 +819,7 @@ display: block;        把某元素转换成了块元素===&gt;独占一行，�
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">Blogo funkcias plej bone kun JavaScript ebligita</div>
   </noscript>
 </body>
 </html>
