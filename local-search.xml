@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>typeof 与 instanceof 区别?</title>
+    <link href="/2022/10/26/typeof-%E4%B8%8E-instanceof-%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/10/26/typeof-%E4%B8%8E-instanceof-%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<h1>一、typeof</h1><ul class="lvl-0"><li class="lvl-3"><code>typeof</code> 操作符返回一个字符串，表示未经计算的操作数的类型</li></ul>  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>使用方法<br>typeof operand<br>typeof(operand)<br><br><br>typeof <span class="hljs-number">1</span> <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;number&#x27;</span><br>typeof <span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;string&#x27;</span><br>typeof undefined <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;undefined&#x27;</span><br>typeof true <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;boolean&#x27;</span><br>typeof Symbol() <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;symbol&#x27;</span><br>typeof null <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof [] <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof &#123;&#125; <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof console <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof console.log <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;function&#x27;</span><br></code></pre></td></tr></table></figure><h1>二、instanceof</h1><ul class="lvl-0"><li class="lvl-3"><p><code>instanceof</code> 运算符用于检测构造函数的 <code>prototype</code> 属性是否出现在某个实例对象的原型链上</p></li></ul><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs delphi"><span class="hljs-keyword">object</span> instanceof <span class="hljs-function"><span class="hljs-keyword">constructor</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"><span class="hljs-title">object</span>为实例对象，<span class="hljs-title">constructor</span>为构造函数</span><br></code></pre></td></tr></table></figure><ul class="lvl-0"><li class="lvl-3"><p>构造函数通过<code>new</code>可以实例对象，<code>instanceof</code>能判断这个对象是否是之前那个构造函数生成的对象</p></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 定义构建函数</span><br><span class="hljs-keyword">let</span> <span class="hljs-title class_">Car</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;&#125;<br><span class="hljs-keyword">let</span> benz = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>()<br>benz <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Car</span> <span class="hljs-comment">// true</span><br><span class="hljs-keyword">let</span> car = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&#x27;xxx&#x27;</span>)<br>car <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">String</span> <span class="hljs-comment">// true</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;xxx&#x27;</span><br>str <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">String</span> <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure><h1>三、区别</h1><ul class="lvl-0"><li class="lvl-2"><p><code>typeof</code>会返回一个变量的基本类型，<code>instanceof</code>返回的是一个布尔值</p></li><li class="lvl-2"><p><code>instanceof</code> 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型</p></li><li class="lvl-2"><p>而<code>typeof</code> 也存在弊端，它虽然可以判断基础数据类型（<code>null</code> 除外），但是引用数据类型中，除了<code>function</code> 类型以外，其他的也无法判断</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>python常用的值类型</title>
+    <link href="/2022/10/25/python%E5%B8%B8%E7%94%A8%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B/"/>
+    <url>/2022/10/25/python%E5%B8%B8%E7%94%A8%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>数字(Number)</p></li><li class="lvl-2"><p>字符串(String)</p></li><li class="lvl-2"><p>列表(List) 有序的可变序列</p></li><li class="lvl-2"><p>元组(Tuple) 有序的不可变序列</p></li><li class="lvl-2"><p>集合(Set) 无序的不重复集合</p></li><li class="lvl-2"><p>字典(Dictionary)  无序Key-Value集合</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>什么是事件委托？</title>
     <link href="/2022/10/24/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%EF%BC%9F/"/>
     <url>/2022/10/24/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%EF%BC%9F/</url>
