@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>Js作用域</title>
+    <link href="/2022/10/27/Js%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <url>/2022/10/27/Js%E4%BD%9C%E7%94%A8%E5%9F%9F/</url>
+    
+    <content type="html"><![CDATA[<h1>概念</h1><p>作用域简单来说就是一个变量的作用范围。</p><h1>在JS中作用域分成两种</h1><ul class="lvl-0"><li class="lvl-2"><p>全局作用域</p><ul class="lvl-2"><li class="lvl-6">直接在script标签中编写的代码都运行在全局作用域中</li><li class="lvl-6">全局作用域在打开页面时创建，在页面关闭时销毁。</li><li class="lvl-6">全局作用域中有一个全局对象window，window对象由浏览器提供，可以在页面中直接使用，它代表的是整个的浏览器的窗口。</li><li class="lvl-6">在全局作用域中创建的变量都会作为window对象的属性保存在全局作用域中创建的函数都会作为window对象的方法保存</li><li class="lvl-6">在全局作用域中创建的变量和函数可以在页面的任意位置访问。在函数作用域中也可以访问到全局作用域的变量。</li><li class="lvl-6">尽量不要在全局中创建变量</li></ul></li><li class="lvl-2"><p>函数作用域</p><ul class="lvl-2"><li class="lvl-6">函数作用域是函数执行时创建的作用域，每次调用函数都会创建一个新的函数作用域。</li><li class="lvl-6">函数作用域在函数执行时创建，在函数执行结束时销毁。</li><li class="lvl-6">在函数作用域中创建的变量，不能在全局中访问。</li><li class="lvl-6">当在函数作用域中使用一个变量时，它会先在自身作用域中寻找，如果找到了则直接使用，如果没有找到则到上一级作用域中寻找，如果找到了则使用，找不到则继续向上找，一直会</li></ul></li><li class="lvl-2"><p>变量的声明提前</p><ul class="lvl-2"><li class="lvl-6">在全局作用域中，使用var关键字声明的变量会在所有的代码执行之前被声明，但是不会赋值。所以我们可以在变量声明前使用变量。但是不使用var关键字声明的变量不会被声明提前。</li><li class="lvl-6">在函数作用域中，也具有该特性，使用var关键字声明的变量会在函数所有的代码执行前被声明，如果没有使用var关键字声明变量，则变量会变成全局变量</li></ul></li><li class="lvl-2"><p>函数的声明提前</p><ul class="lvl-2"><li class="lvl-6">在全局作用域中，使用函数声明创建的函数（function fun(){}）,会在所有的代码执行之前被创建，也就是我们可以在函数声明前去调用函数，但是使用函数表达式(var fun = function(){})创建的函数没有该特性</li><li class="lvl-6">在函数作用域中，使用函数声明创建的函数，会在所有的函数中的代码执行之前就被创建好了。</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>对象与函数</title>
+    <link href="/2022/10/27/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0/"/>
+    <url>/2022/10/27/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h1>对象（Object）</h1><ul class="lvl-0"><li class="lvl-2"><p>对象是JS中的引用数据类型</p></li><li class="lvl-2"><p>对象是一种复合数据类型，在对象中可以保存多个不同数据类型的属性</p></li><li class="lvl-2"><p>使用typeof检查一个对象时，会返回object</p></li><li class="lvl-2"><p>创建对象</p><ul class="lvl-2"><li class="lvl-6">方式一：<ul class="lvl-4"><li class="lvl-10">var obj = new Object();</li></ul></li><li class="lvl-6">方式二：<ul class="lvl-4"><li class="lvl-10">var obj = {};</li></ul></li></ul></li><li class="lvl-2"><p>向对象中添加属性</p><ul class="lvl-2"><li class="lvl-6"><p>语法：</p><ul class="lvl-4"><li class="lvl-10"><p>对象.属性名 = 属性值;</p></li><li class="lvl-10"><p>对象[“属性名”] = 属性值;</p></li><li class="lvl-10"><p>对象的属性名没有任何要求，不需要遵守标识符的规范，但是在开发中，尽量按照标识符的要求去写。</p></li><li class="lvl-10"><p>属性值也可以任意的数据类型。</p></li></ul></li><li class="lvl-6"><p>读取对象中的属性</p><ul class="lvl-4"><li class="lvl-10">语法：对象.属性名对象[“属性名”]</li><li class="lvl-10">如果读取一个对象中没有的属性，它不会报错，而是返回一个undefined</li></ul></li><li class="lvl-6"><p>删除对象中的属性</p><ul class="lvl-4"><li class="lvl-10">语法：<br>delete 对象.属性名<br>delete 对象[“属性名”]</li></ul></li><li class="lvl-6"><p>使用in检查对象中是否含有指定属性</p><ul class="lvl-4"><li class="lvl-10">语法：“属性名” in 对象<ul class="lvl-6"><li class="lvl-14">如果在对象中含有该属性，则返回true<br>如果没有则返回false</li></ul></li></ul></li><li class="lvl-6"><p>使用对象字面量，在创建对象时直接向对象中添加属性语法：<br>var obj = {<br>属性名:属性值,<br>属性名:属性值,<br>属性名:属性值,<br>属性名:属性值<br>}</p></li><li class="lvl-6"><p>基本数据类型和引用数据类型</p><ul class="lvl-4"><li class="lvl-10">基本数据类型<br>String Number Boolean Null Undefined</li><li class="lvl-10">引用数据类型<br>Object</li><li class="lvl-10">基本数据类型的数据，变量是直接保存的它的值。变量与变量之间是互相独立的，修改一个变量不会影响其他的变量。</li><li class="lvl-10">引用数据类型的数据，变量是保存的对象的引用（内存地址）。如果多个变量指向的是同一个对象，此时修改一个变量的属性，会影响其他的变量。</li><li class="lvl-10">比较两个变量时，对于基本数据类型，比较的就是值，对于引用数据类型比较的是地址，地址相同才相同</li></ul></li></ul></li></ul><h1>函数（Function）</h1><ul class="lvl-0"><li class="lvl-2"><p>函数也是一个对象，也具有普通对象的功能</p></li><li class="lvl-2"><p>函数中可以封装一些代码，在需要的时候可以去调用函数来执行这些代码</p></li><li class="lvl-2"><p>使用typeof检查一个函数时会返回function</p></li><li class="lvl-2"><p>创建函数</p><ul class="lvl-2"><li class="lvl-6"><p>函数声明<br>function 函数名([形参1,形参2…形参N]){<br>语句…<br>}</p></li><li class="lvl-6"><p>函数表达式<br>var 函数名 = function([形参1,形参2…形参N]){<br>语句…<br>};</p></li><li class="lvl-6"><p>调用函数</p><ul class="lvl-4"><li class="lvl-10">语法：函数对象([实参1,实参2…实参N]);<br>fun() sum() alert() Number() parseInt()</li><li class="lvl-10">当我们调用函数时，函数中封装的代码会按照编写的顺序执行</li></ul></li><li class="lvl-6"><p>形参和实参</p><ul class="lvl-4"><li class="lvl-10"><p>形参：形式参数</p><ul class="lvl-6"><li class="lvl-14">定义函数时，可以在()中定义一个或多个形参，形参之间使用,隔开定义形参就相当于在函数内声明了对应的变量但是并不赋值，形参会在调用时才赋值。</li></ul></li><li class="lvl-10"><p>实参：实际参数</p><ul class="lvl-6"><li class="lvl-14">调用函数时，可以在()传递实参，传递的实参会赋值给对应的形参,<br>调用函数时JS解析器不会检查实参的类型和个数，可以传递任意数据类型的值。如果实参的数量大于形参，多余实参将不会赋值，如果实参的数量小于形参，则没有对应实参的形参将会赋值undefined</li></ul></li></ul></li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>exports 和 moudle exports的使用区别</title>
     <link href="/2022/10/26/exports-%E5%92%8C-moudle-exports%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8C%BA%E5%88%AB/"/>
     <url>/2022/10/26/exports-%E5%92%8C-moudle-exports%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8C%BA%E5%88%AB/</url>
