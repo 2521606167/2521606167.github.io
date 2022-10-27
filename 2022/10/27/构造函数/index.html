@@ -16,26 +16,26 @@
   <meta name="author" content="txw">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、typeof  typeof 操作符返回一个字符串，表示未经计算的操作数的类型    123456789101112131415&#x2F;&#x2F;使用方法typeof operandtypeof(operand)typeof 1 &#x2F;&#x2F; &amp;#x27;number&amp;#x27;typeof &amp;#x27;1&amp;#x27; &#x2F;&#x2F; &amp;#x27;string&amp;#x27;typeof undefined &#x2F;&#x2F; &amp;#x27;u">
+    <meta name="description" content="构造函数是专门用来创建对象的函数  一个构造函数我们也可以称为一个类 通过一个构造函数创建的对象，我们称该对象时这个构造函数的实例 通过同一个构造函数创建的对象，我们称为一类对象 构造函数就是一个普通的函数，只是他的调用方式不同，如果直接调用，它就是一个普通函数如果使用new来调用，则它就是一个构造函数    构造函数的执行流程：  创建一个新的对象 将新的对象作为函数的上下文对象（this）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typeof 与 instanceof 区别?">
-<meta property="og:url" content="http://example.com/2022/10/26/typeof-%E4%B8%8E-instanceof-%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:title" content="构造函数">
+<meta property="og:url" content="http://example.com/2022/10/27/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="wolf&amp;sheep">
-<meta property="og:description" content="一、typeof  typeof 操作符返回一个字符串，表示未经计算的操作数的类型    123456789101112131415&#x2F;&#x2F;使用方法typeof operandtypeof(operand)typeof 1 &#x2F;&#x2F; &amp;#x27;number&amp;#x27;typeof &amp;#x27;1&amp;#x27; &#x2F;&#x2F; &amp;#x27;string&amp;#x27;typeof undefined &#x2F;&#x2F; &amp;#x27;u">
+<meta property="og:description" content="构造函数是专门用来创建对象的函数  一个构造函数我们也可以称为一个类 通过一个构造函数创建的对象，我们称该对象时这个构造函数的实例 通过同一个构造函数创建的对象，我们称为一类对象 构造函数就是一个普通的函数，只是他的调用方式不同，如果直接调用，它就是一个普通函数如果使用new来调用，则它就是一个构造函数    构造函数的执行流程：  创建一个新的对象 将新的对象作为函数的上下文对象（this）">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/images/6.jpg">
-<meta property="article:published_time" content="2022-10-26T12:03:04.000Z">
-<meta property="article:modified_time" content="2022-10-26T12:57:19.480Z">
+<meta property="og:image" content="http://example.com/images/15.webp">
+<meta property="article:published_time" content="2022-10-27T09:44:40.000Z">
+<meta property="article:modified_time" content="2022-10-27T09:47:26.040Z">
 <meta property="article:author" content="txw">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/6.jpg">
+<meta name="twitter:image" content="http://example.com/images/15.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>typeof 与 instanceof 区别? - wolf&amp;sheep</title>
+  <title>构造函数 - wolf&amp;sheep</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -275,7 +275,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="typeof 与 instanceof 区别?"></span>
+            <span id="subtitle" data-typed-text="构造函数"></span>
           
         </div>
 
@@ -291,8 +291,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-26 20:03" pubdate>
-          October 26, 2022 pm
+        <time datetime="2022-10-27 17:44" pubdate>
+          October 27, 2022 pm
         </time>
       </span>
     
@@ -303,7 +303,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          938 words
+          202 words
         
       </span>
     
@@ -314,7 +314,7 @@
         
         
         
-          8 mins
+          2 mins
         
       </span>
     
@@ -360,12 +360,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">typeof 与 instanceof 区别?</h1>
+            <h1 style="display: none">构造函数</h1>
             
               <p class="note note-info">
                 
                   
-                    更新于 21 hours ago
+                    更新于 14 minutes ago
                   
                 
               </p>
@@ -373,34 +373,24 @@
             
               <div class="markdown-body">
                 
-                <h1>一、typeof</h1>
-<ul class="lvl-0">
-<li class="lvl-3"><code>typeof</code> 操作符返回一个字符串，表示未经计算的操作数的类型</li>
-</ul>
-  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>使用方法<br>typeof operand<br>typeof(operand)<br><br><br>typeof <span class="hljs-number">1</span> <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;number&#x27;</span><br>typeof <span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;string&#x27;</span><br>typeof undefined <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;undefined&#x27;</span><br>typeof true <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;boolean&#x27;</span><br>typeof Symbol() <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;symbol&#x27;</span><br>typeof null <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof [] <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof &#123;&#125; <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof console <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;object&#x27;</span><br>typeof console.log <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;function&#x27;</span><br></code></pre></td></tr></table></figure>
-<h1>二、instanceof</h1>
-<ul class="lvl-0">
-<li class="lvl-3">
-<p><code>instanceof</code> 运算符用于检测构造函数的 <code>prototype</code> 属性是否出现在某个实例对象的原型链上</p>
-</li>
-</ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs delphi"><span class="hljs-keyword">object</span> instanceof <span class="hljs-function"><span class="hljs-keyword">constructor</span></span><br><span class="hljs-function"></span><br><span class="hljs-function"><span class="hljs-title">object</span>为实例对象，<span class="hljs-title">constructor</span>为构造函数</span><br></code></pre></td></tr></table></figure>
-<ul class="lvl-0">
-<li class="lvl-3">
-<p>构造函数通过<code>new</code>可以实例对象，<code>instanceof</code>能判断这个对象是否是之前那个构造函数生成的对象</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 定义构建函数</span><br><span class="hljs-keyword">let</span> <span class="hljs-title class_">Car</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;&#125;<br><span class="hljs-keyword">let</span> benz = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>()<br>benz <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Car</span> <span class="hljs-comment">// true</span><br><span class="hljs-keyword">let</span> car = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&#x27;xxx&#x27;</span>)<br>car <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">String</span> <span class="hljs-comment">// true</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-string">&#x27;xxx&#x27;</span><br>str <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">String</span> <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
-<h1>三、区别</h1>
-<ul class="lvl-0">
+                <ul class="lvl-0">
 <li class="lvl-2">
-<p><code>typeof</code>会返回一个变量的基本类型，<code>instanceof</code>返回的是一个布尔值</p>
+<p>构造函数是专门用来创建对象的函数</p>
+<ul class="lvl-2">
+<li class="lvl-6">一个构造函数我们也可以称为一个类</li>
+<li class="lvl-6">通过一个构造函数创建的对象，我们称该对象时这个构造函数的实例</li>
+<li class="lvl-6">通过同一个构造函数创建的对象，我们称为一类对象</li>
+<li class="lvl-6">构造函数就是一个普通的函数，只是他的调用方式不同，如果直接调用，它就是一个普通函数如果使用new来调用，则它就是一个构造函数</li>
+</ul>
 </li>
 <li class="lvl-2">
-<p><code>instanceof</code> 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型</p>
-</li>
-<li class="lvl-2">
-<p>而<code>typeof</code> 也存在弊端，它虽然可以判断基础数据类型（<code>null</code> 除外），但是引用数据类型中，除了<code>function</code> 类型以外，其他的也无法判断</p>
+<p>构造函数的执行流程：</p>
+<ul class="lvl-2">
+<li class="lvl-6">创建一个新的对象</li>
+<li class="lvl-6">将新的对象作为函数的上下文对象（this）</li>
+<li class="lvl-6">执行函数中的代码</li>
+<li class="lvl-6">将新建的对象返回</li>
+</ul>
 </li>
 </ul>
 
@@ -448,8 +438,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>typeof 与 instanceof 区别?</div>
-      <div>http://example.com/2022/10/26/typeof-与-instanceof-区别/</div>
+      <div>构造函数</div>
+      <div>http://example.com/2022/10/27/构造函数/</div>
     </div>
     <div class="license-meta">
       
@@ -461,13 +451,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>October 26, 2022</div>
+          <div>October 27, 2022</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>October 26, 2022</div>
+          <div>October 27, 2022</div>
         </div>
       
       
@@ -498,18 +488,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/26/%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E5%9D%97%E5%8C%96%EF%BC%9F/" title="什么是模块化？">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">什么是模块化？</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/25/python%E5%B8%B8%E7%94%A8%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B/" title="python常用的值类型">
-                        <span class="hidden-mobile">python常用的值类型</span>
+                      <a href="/2022/10/27/this%EF%BC%88%E4%B8%8A%E4%B8%8B%E6%96%87%E5%AF%B9%E8%B1%A1%EF%BC%89/" title="this（上下文对象）">
+                        <span class="hidden-mobile">this（上下文对象）</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
