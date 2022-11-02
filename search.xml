@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>Promise 是什么?</title>
+      <link href="/2022/11/02/Promise-%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+      <url>/2022/11/02/Promise-%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+      
+        <content type="html"><![CDATA[<h1>抽象表达</h1><ul class="lvl-0"><li class="lvl-2">Promise 是一门新的技术（Es6规范）</li><li class="lvl-2">Promise 是JS中进行异步编程的新解决方案（旧方案是使用回调函数）</li></ul><h1>具体表达</h1><ul class="lvl-0"><li class="lvl-2"><p>从语法来说：Promise是一个构造函数</p></li><li class="lvl-2"><p>从功能上来说：Promise 对象用来封装一个异步操作并可以获取其成功/<br>失败的结果值</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS常见的错误类型及错误处理</title>
+      <link href="/2022/11/02/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2022/11/02/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1>错误的类型</h1><ul class="lvl-0"><li class="lvl-2">Error: 所有错误的父类型</li><li class="lvl-2">ReferenceError: 引用的变量不存在</li><li class="lvl-2">TypeError: 数据类型不正确的错误</li><li class="lvl-2">RangeError: 数据值不在其允许的范围内</li><li class="lvl-2">SyntaxError: 语法错误</li></ul><h1>错误处理</h1><ul class="lvl-0"><li class="lvl-2"><p>捕获错误：try…catch…</p></li><li class="lvl-2"><p>抛出错误：throw error</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是回调函数？</title>
+      <link href="/2022/10/29/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%EF%BC%9F/"/>
+      <url>/2022/10/29/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<h1>什么是回调函数？</h1><ul class="lvl-0"><li class="lvl-2">自己定义的</li><li class="lvl-2">没有调用</li><li class="lvl-2">最终却执行了</li></ul><h1>常见的回调函数</h1><ul class="lvl-0"><li class="lvl-2"><p>dom事件回调函数</p></li><li class="lvl-2"><p>定时器回调函数</p></li><li class="lvl-2"><p>ajax请求</p></li><li class="lvl-2"><p>生命周期回调函数</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>构造函数</title>
       <link href="/2022/10/27/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"/>
       <url>/2022/10/27/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</url>
