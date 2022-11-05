@@ -4,6 +4,156 @@
   
     
     <entry>
+      <title>async/await</title>
+      <link href="/2022/11/05/async-await/"/>
+      <url>/2022/11/05/async-await/</url>
+      
+        <content type="html"><![CDATA[<h1>文档</h1><ul class="lvl-0"><li class="lvl-2"><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function</a></li><li class="lvl-2"><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/await">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/await</a></li></ul><ol><li class="lvl-3">async 函数</li></ol><ul class="lvl-0"><li class="lvl-2"><p>函数的返回值为promise对象</p></li><li class="lvl-2"><p>2.promise对象的结果由async函数执行的返回值决定</p></li></ul><ol start="2"><li class="lvl-3"><p>await 表达式</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>await右侧的表达式一般为promise对象, 但也可以是其它的值</p></li><li class="lvl-2"><p>如果表达式是promise对象, await返回的是promise成功的值</p></li><li class="lvl-2"><p>如果表达式是其它值, 直接将此值作为await的返回值</p></li><li class="lvl-2"><p>await必须写在async函数中, 但async函数中可以没有await</p></li><li class="lvl-2"><p>如果await的promise失败了, 就会抛出异常, 需要通过try…catch捕获处理</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> async/await </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> async/await </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>promise的几个关键问题</title>
+      <link href="/2022/11/03/promise%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/11/03/promise%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<ol><li class="lvl-3"><p>如何改变promise的状态?</p></li></ol><ul class="lvl-0"><li class="lvl-2">resolve(value): 如果当前是pending就会变为resolved</li><li class="lvl-2">reject(reason): 如果当前是pending就会变为rejected</li></ul><p>抛出异常: 如果当前是pending就会变为rejected</p><ol start="2"><li class="lvl-3"><p>一个promise指定多个成功/失败回调函数, 都会调用吗?</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>当promise改变为对应状态时都会调用</p></li></ul><ol start="3"><li class="lvl-3"><p>改变promise状态和指定回调函数谁先谁后?</p><ol><li class="lvl-7">都有可能, 正常情况下是先指定回调再改变状态, 但也可以先改状态再指定回调</li><li class="lvl-7">如何先改状态再指定回调?</li></ol><ul class="lvl-2"><li class="lvl-6">在执行器中直接调用resolve()/reject()</li><li class="lvl-6">延迟更长时间才调用then()</li></ul><ol start="3"><li class="lvl-7">什么时候才能得到数据?</li></ol><ul class="lvl-2"><li class="lvl-6">如果先指定的回调, 那当状态发生改变时, 回调函数就会调用, 得到数据</li><li class="lvl-7">如果先改变的状态, 那当指定回调时, 回调函数就会调用, 得到数据</li></ul></li><li class="lvl-3"><p>promise.then()返回的新promise的结果状态由什么决定?</p><ol><li class="lvl-7"><p>简单表达: 由then()指定的回调函数执行的结果决定</p></li><li class="lvl-7"><p>详细表达:</p><ul class="lvl-4"><li class="lvl-10">如果抛出异常, 新promise变为rejected, reason为抛出的异常</li><li class="lvl-10">如果返回的是非promise的任意值, 新promise变为resolved, value为返回的值</li><li class="lvl-10">如果返回的是另一个新promise, 此promise的结果就会成为新promise的结果</li></ul></li></ol></li><li class="lvl-3"><p>promise如何串连多个操作任务?</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>promise的then()返回一个新的promise, 可以开成then()的链式调用</p></li><li class="lvl-2"><p>通过then的链式调用串连多个同步/异步任务</p></li></ul><ol start="6"><li class="lvl-3"><p>promise异常传透?</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>当使用promise的then链式调用时, 可以在最后指定失败的回调, 前面任何操作出了异常, 都会传到最后失败的回调中处理</p></li></ul><ol start="7"><li class="lvl-3"><p>中断promise链?</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>当使用promise的then链式调用时, 在中间中断, 不再调用后面的回调函数</p></li><li class="lvl-2"><p>办法: 在回调函数中返回一个pendding状态的promise对象</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何使用Promise?</title>
+      <link href="/2022/11/03/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Promise/"/>
+      <url>/2022/11/03/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Promise/</url>
+      
+        <content type="html"><![CDATA[<h1>API</h1><ol><li class="lvl-3">Promise构造函数: Promise (excutor) {}</li></ol><ul class="lvl-0"><li class="lvl-2">executor函数:  执行器(resolve, reject) =&gt; {}</li><li class="lvl-2">resolve函数: 内部定义成功时调用的函数value =&gt; {}</li><li class="lvl-2">reject函数: 内部定义失败时调用的函数reason =&gt; {}<br>说明: executor会在Promise内部立即同步调用,异步操作在执行器中执行</li></ul><ol start="2"><li class="lvl-3">Promise.prototype.then方法: (onResolved, onRejected) =&gt; {}</li></ol><ul class="lvl-0"><li class="lvl-2"><p>onResolved函数: 成功的回调函数(value) =&gt; {}</p></li><li class="lvl-2"><p>onRejected函数: 失败的回调函数(reason) =&gt; {}<br>说明: 指定用于得到成功value的成功回调和用于得到失败reason的失败回调</p></li></ul><ol start="3"><li class="lvl-3"><p>Promise.prototype.catch方法: (onRejected) =&gt; {}</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>onRejected函数: 失败的回调函数(reason) =&gt; {}<br>说明: then()的语法糖, 相当于: then(undefined, onRejected)</p></li></ul><ol start="4"><li class="lvl-3"><p>Promise.resolve方法: (value) =&gt; {}</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>value: 成功的数据或promise对象说明: 返回一个成功/失败的promise对象</p></li></ul><ol start="5"><li class="lvl-3"><p>Promise.reject方法: (reason) =&gt; {}</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>reason: 失败的原因说明: 返回一个失败的promise对象</p></li></ul><ol start="6"><li class="lvl-3"><p>Promise.all方法: (promises) =&gt; {}</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>promises: 包含n个promise的数组说明: 返回一个新的promise, 只有所有的promise都成功才成功, 只要有一个失败了就直接失败</p></li></ul><ol start="7"><li class="lvl-3"><p>Promise.race方法: (promises) =&gt; {}</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>promises: 包含n个promise的数组说明: 返回一个新的promise, 第一个完成的promise的结果状态就是最终的结果状态</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>为什么要用Promise?</title>
+      <link href="/2022/11/03/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Promise/"/>
+      <url>/2022/11/03/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Promise/</url>
+      
+        <content type="html"><![CDATA[<h1>指定回调函数的方式更加灵活</h1><ol><li class="lvl-3">旧的: 必须在启动异步任务前指定</li><li class="lvl-3">promise: 启动异步任务=&gt; 返回promie对象=&gt; 给promise对象绑定回调函数(甚至可以在异步任务结束后指定/多个)</li></ol><h1>支持链式调用, 可以解决回调地狱问题</h1><ol><li class="lvl-3"><p>什么是回调地狱?<br>回调函数嵌套调用, 外部回调函数异步执行的结果是嵌套的回调执行的条件</p></li><li class="lvl-3"><p>回调地狱的缺点?</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>不便于阅读</p></li><li class="lvl-2"><p>不便于异常处理</p></li></ul><ol start="3"><li class="lvl-3"><p>解决方案?<br>promise链式调用</p></li><li class="lvl-3"><p>终极解决方案?<br>async/await</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>promise基本运行流程</title>
+      <link href="/2022/11/03/promise%E5%9F%BA%E6%9C%AC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B/"/>
+      <url>/2022/11/03/promise%E5%9F%BA%E6%9C%AC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/promise.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>promise 的状态改变</title>
+      <link href="/2022/11/02/promise-%E7%9A%84%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98/"/>
+      <url>/2022/11/02/promise-%E7%9A%84%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><p>pending(等待) 变为 resolved（成功状态）</p></li><li class="lvl-2"><p>pending(等待) 变为 rejected（失败状态）</p></li></ul><p>说明: 只有这 2 种, 且一个 promise 对象只能改变一次无论变为成功还是失败, 都会有一个结果数据成功的结果数据一般称为 value, 失败的结果数据一般称为 reason</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Promise </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Promise </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Promise 是什么?</title>
       <link href="/2022/11/02/Promise-%E6%98%AF%E4%BB%80%E4%B9%88/"/>
       <url>/2022/11/02/Promise-%E6%98%AF%E4%BB%80%E4%B9%88/</url>
